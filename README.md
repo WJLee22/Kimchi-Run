@@ -16,7 +16,9 @@ Unity6 엔진으로 제작된 이 흥미진진한 러닝 게임에서 여러분�
 
 ## 💻 프로젝트 정보 💻
 
-엔진: Unity6  
-주요 기능: 러닝 게임, 장애물 회피, 점수 시스템  
-개발 환경: Visual Studio Code 
+| Engine | IDE |
+|---|---|
+| ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) | ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) |
 
+
+#### 주요 기능: 러닝 게임, 장애물 회피, 점수 시스템  
