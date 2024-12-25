@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     [Header("References")]
     public Rigidbody2D PlayerRigidbody;
 
+    // 플레이어가 땅에 닿아있는지 여부를 나타내는 변수.
+    private bool isGrounded = true;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -20,13 +23,20 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 스페이스바 입력을 받아 점프를 처리하는 로직
-        if (Input.GetKeyDown(KeyCode.Space)){
+        // 스페이스바 입력을 받아 점프를 처리하는 로직. 땅에 닿아있을 때만 점프 가능하도록 함.
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded){
             // AddForceY: Rigidbody2D에 수직 방향으로 힘을 가함.
             // force 타입 = ForceMode2D.Impulse: 순간적인 힘. -> 플레이어에게 즉시 force 부여. 
             PlayerRigidbody.AddForceY(jumpForce, ForceMode2D.Impulse);
+            isGrounded = false; // 점프 후 땅에 닿지 않은 상태로 변경.
+        }   
+    }
+
+    // OnCollisionEnter2D: Collider간에 충돌이 발생했을 때 호출되는 함수.(ex.플레이어 Collider와 Platform Collider 충돌시)
+    void OnCollisionEnter2D(Collision2D collision){
+        // 땅에 닿았을 때, isGrounded를 true로 변경.
+        if (collision.gameObject.name == "Platform"){ 
+            isGrounded = true;
         }
-        
-        
     }
 }
