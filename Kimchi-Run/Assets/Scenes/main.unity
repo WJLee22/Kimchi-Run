@@ -462,7 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e265af539d8de4a886e64c32f82653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 3
+  scrollSpeed: 0.8
   meshRenderer: {fileID: 1159326009}
 --- !u!1 &1308848094
 GameObject:
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e265af539d8de4a886e64c32f82653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 1
+  scrollSpeed: 0.1
   meshRenderer: {fileID: 1308848096}
 --- !u!1 &1480977182
 GameObject:
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e265af539d8de4a886e64c32f82653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 2
+  scrollSpeed: 0.2
   meshRenderer: {fileID: 1480977184}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
