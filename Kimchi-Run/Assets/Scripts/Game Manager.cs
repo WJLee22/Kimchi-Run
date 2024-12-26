@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
         {
             state = GameState.Playing; // 게임 시작 화면에서 스페이스바를 누르면 게임 시작.
             IntroUI.SetActive(false); // 게임 시작 화면 UI 비활성화.
+            EnemySpawner.SetActive(true); // 적 스포너 활성화.
+            FoodSpawner.SetActive(true); // 음식 스포너 활성화.
+            GoldenSpawner.SetActive(true); // 금배추 스포너 활성화.
         }
     }
 }
