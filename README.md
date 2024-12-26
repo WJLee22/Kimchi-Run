@@ -69,7 +69,7 @@
 | ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) | ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) | ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) | **`PC & Mobile Web`** (Chrome, Edge, Firefox...) |
 
 
-
-#### 주요 기능: 러닝 게임, 장애물 회피, 점수 시스템  
-
 </div>
+
+<br>
+<br>
