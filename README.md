@@ -18,13 +18,13 @@
 
  # <div align="center"> 🎮 게임 플레이하기 🎮 </div>
 
-<br>
+<br><br>
 
 <div align="center">
   
 [![Play Kimchi Run](https://img.shields.io/badge/PLAY%20KIMCHI%20RUN-FF0000?style=for-the-badge&logo=unity&logoColor=white)](https://play.unity.com/en/games/fdc0bfd5-6e15-404e-b3a6-ef55d4d4bb78/kimchi-run-by-wj)
 
-<br>
+<br><br>
 
 ### **👆 위 버튼을 클릭하여 지금 바로 게임을 시작하세요! 👆**
 </div>
