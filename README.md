@@ -35,7 +35,7 @@
 
 <div align="center">
   
-[![Play Kimchi Run](https://img.shields.io/badge/PLAY%20KIMCHI%20RUN-FF0000?style=for-the-badge&logo=unity&logoColor=white)](https://play.unity.com/en/games/fdc0bfd5-6e15-404e-b3a6-ef55d4d4bb78/kimchi-run-by-wj)
+[![Play Kimchi Run](https://img.shields.io/badge/PLAY%20KIMCHI%20RUN-FF0000?style=for-the-badge&logo=unity&logoColor=white)](https://play.unity.com/en/games/4fe595e3-40c7-45d0-9f26-e1b2e271d5fa/kimchi-run-by-wj)
 
 <br>
 
