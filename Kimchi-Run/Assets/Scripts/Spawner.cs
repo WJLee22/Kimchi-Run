@@ -9,8 +9,8 @@ public class Spawner : MonoBehaviour
 
     [Header("References")]
     public GameObject[] gameObjects; // 생성할 오브젝트들을 담을 배열.
-  
-    void Start()
+
+    void OnEnable() //오브젝트가 활성화될 때마다 호출되는 함수.(여기서는 Enemy-Food-Golden 스포너가 활성화될 때마다 호출됨.)  
     {
         Invoke("Spawn", Random.Range(minSpawnDelay, maxSpawnDelay)); // 프레임 시작 시, Spawn 함수를 랜덤초 뒤에 실행.
     }
