@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
         // 무적 상태로 변경.
         isInvincible = true;
         CancelInvoke("StopInvincible"); // StopInvincible 함수를 취소.
+        // CancelInvoke를 호출하여 이전에 설정된 Invoke 호출을 취소함으로써 무적 상태 로직이 제대로 작동. 이전에는 무적 상태가 끝나기 전에 다시 StartInvincible 메서드가 호출되면 이전 Invoke 호출이 여전히 유효하여 무적 상태가 정해진 무적시간보다 빨리 끝나는 문제가 있었음.
         Invoke("StopInvincible", 5f); // 5초 후 무적 상태 해제.
     }
 
