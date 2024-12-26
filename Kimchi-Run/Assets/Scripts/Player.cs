@@ -12,8 +12,6 @@ public class Player : MonoBehaviour
     public Animator PlayerAnimator; // 플레이어 애니메이션을 제어하기 위한 레퍼런스.
     public BoxCollider2D PlayerCollider; // 플레이어의 충돌체를 나타내는 레퍼런스.
     private bool isGrounded = true;// 플레이어가 땅에 닿아있는지 여부를 나타내는 변수.
-
-    public int lives = 3; // 플레이어의 목숨을 나타내는 변수.
     public bool isInvincible = false; // 플레이어가 무적 상태인지 여부를 나타내는 변수.
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,7 +33,7 @@ public class Player : MonoBehaviour
         }   
     }
 
-    void KillPlayer()
+    public void KillPlayer()
     {
         //플레이어가 죽었을떄의 처리.
         PlayerCollider.enabled = false; // 플레이어의 충돌체를 비활성화.
@@ -46,8 +44,8 @@ public class Player : MonoBehaviour
 
     void Hit(){
         // 목숨이 0이 아니면 목숨을 하나 줄이고, 목숨이 0이면 게임오버.
-            lives -= 1;
-            if(lives == 0)
+            GameManager.instance.lives -= 1;
+            if(GameManager.instance.lives == 0)
             {
                 KillPlayer();
             }
@@ -55,7 +53,7 @@ public class Player : MonoBehaviour
 
     void Heal(){
         // 목숨을 하나 늘림. 단, 목숨이 3보다 커지지 않도록 함.
-            lives = Mathf.Min(3, lives + 1); 
+            GameManager.instance.lives = Mathf.Min(3, GameManager.instance.lives + 1); 
     }
 
     void StartInvincible(){
