@@ -36,8 +36,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 게임 상태가 Intro이고, 스페이스바를 눌렀다면 (게임 상태: Intro -> Playing)
-        if(state == GameState.Intro && Input.GetKeyDown(KeyCode.Space))
+        // 게임 상태가 Intro이고, 스페이스바(모든키로 수정함)를 눌렀다면 (게임 상태: Intro -> Playing)
+        if(state == GameState.Intro && Input.anyKeyDown)
         {
             state = GameState.Playing; // 게임 시작 화면에서 스페이스바를 누르면 게임 시작.
             IntroUI.SetActive(false); // 게임 시작 화면 UI 비활성화.
