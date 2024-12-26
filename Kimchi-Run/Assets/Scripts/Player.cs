@@ -43,4 +43,23 @@ public class Player : MonoBehaviour
             isGrounded = true;
         }
     }
+
+    //Trigger와 충돌했을 때 호출되는 함수.
+    void OnTriggerEnter2D(Collider2D collider){
+        // 장애물들과 충돌했을 때의 처리.
+        if (collider.gameObject.tag == "enemy")
+        {
+         
+        } 
+        // 음식들과 충돌했을 때의 처리.
+        else if(collider.gameObject.tag == "food"){
+
+        }
+        // 금배추와 충돌했을 때의 처리.
+        else if(collider.gameObject.tag == "golden"){
+            
+        }
+    }
+
+
 }

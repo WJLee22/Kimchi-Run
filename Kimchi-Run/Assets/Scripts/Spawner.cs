@@ -16,8 +16,8 @@ public class Spawner : MonoBehaviour
     }
 
     void Spawn(){
-        GameObject randomObject = gameObjects[Random.Range(0,gameObjects.Length)]; // 빌딩 오브젝트 배열에서 랜덤으로 오브젝트를 선택.
-        Instantiate(randomObject, transform.position, Quaternion.identity); // 선택된 오브젝트를 인스턴스화 -> main scene에 생성.
+        GameObject randomObject = gameObjects[Random.Range(0,gameObjects.Length)]; // 빌딩 오브젝트 배열에서 랜덤으로 오브젝트 엘리먼트를 선택.
+        Instantiate(randomObject, transform.position, Quaternion.identity); // 선택된 오브젝트 엘리먼트를 인스턴스화 -> main scene에 생성.
         // Quaternion.identity : 회전값을 0으로 초기화.
         //Invoke: 일정 시간이 지난 후에 특정 함수를 실행하는 함수.
         Invoke("Spawn", Random.Range(minSpawnDelay, maxSpawnDelay)); // 다음 생성까지의 시간을 랜덤으로 설정.
