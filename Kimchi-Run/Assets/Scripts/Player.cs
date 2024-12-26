@@ -59,6 +59,7 @@ public class Player : MonoBehaviour
     void StartInvincible(){
         // 무적 상태로 변경.
         isInvincible = true;
+        CancelInvoke("StopInvincible"); // StopInvincible 함수를 취소.
         Invoke("StopInvincible", 5f); // 5초 후 무적 상태 해제.
     }
 

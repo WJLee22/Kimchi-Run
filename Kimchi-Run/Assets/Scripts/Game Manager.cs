@@ -56,12 +56,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    int getHighScore() // 현재까지의 최고 점수를 반환하는 함수.
+    {
+        return PlayerPrefs.GetInt("highScore"); // 현재까지의 최고 점수를 반환.
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(state == GameState.Playing) // 게임 상태가 Playing이면
         {
             scoreText.text = "Score: " + Mathf.FloorToInt(CalculateScore()); // 점수 텍스트에 경과된 시간을 표시.
+        } 
+        else if(state == GameState.Dead) // 게임 상태가 Dead이면
+        {
+            scoreText.text = "High Score: " + getHighScore(); // 점수 텍스트에 최고 점수를 표시.
+            SaveHighScore(); // 최고 점수를 저장.
         }
         // 게임 상태가 Intro이고, 스페이스바(모든키로 수정함)를 눌렀다면 (게임 상태: Intro -> Playing)
         if(state == GameState.Intro && Input.anyKeyDown)  
