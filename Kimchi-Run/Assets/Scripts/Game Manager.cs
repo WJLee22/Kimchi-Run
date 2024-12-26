@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviour
     {
         if(state != GameState.Playing) // 게임 상태가 Playing이 아니면
         {
-            return 3f; // 게임 속도를 3으로 반환.
+            return 5f; // 게임 시작전, 배경화면에서의 게임 속도.
         }
-        float speed = 3f + (0.5f * Mathf.Floor(CalculateScore() / 10f)); // 게임 속도를 3 + (경과된 시간 / 10)으로 계산. => 10초마다 속도 0.5씩 증가. 즉, 시간이 흘러감에따라 자연스럽게 난이도 증가!!
+        float speed = 8f + (0.5f * Mathf.Floor(CalculateScore() / 10f)); // 초기 게임 속도를 8 + (경과된 시간 / 10)으로 계산. => 10초마다 속도 0.5씩 증가. 즉, 시간이 흘러감에따라 자연스럽게 난이도 증가!!
 
-        return Mathf.Min(speed, 20f); // 게임의 최대 속도가 20을 넘지 않도록 함.
+        return Mathf.Min(speed, 30f); // 게임의 최대 속도가 30을 넘지 않도록 함.
         
     }
 

@@ -24,7 +24,7 @@ public class BackgroundScroll : MonoBehaviour
         // Time.deltaTime: 이전 프레임에서 지금 프레임까지의 초 단위 간격. (즉, 이전 프레임으로부터 현재 프레임까지 몇 초 걸렸는지를 나타냄)
 
         // 이를 통해 텍스쳐(하늘,빌딩,땅...)의 offset이, scrollSpeed 속도로 1초에 한 번만 이동하게 된다.
-        meshRenderer.material.mainTextureOffset += new Vector2(scrollSpeed * Time.deltaTime, 0);
+        meshRenderer.material.mainTextureOffset += new Vector2(scrollSpeed * GameManager.instance.CalculateGameSpeed() / 20 * Time.deltaTime, 0);
 
     }
 }
