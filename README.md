@@ -42,7 +42,7 @@
 #### `중독성 강한 게임 플레이`: 간단한 조작법과 빠른 속도감으로 쉴 새 없이 몰입하게 됩니다! ✨  
 #### `정감가는 캐릭터&디자인`: 한국의 일상적인 풍경과 캐릭터를 배경으로 펼쳐지는 정감가는 분위기의 게임을 즐겨보세요! ✨      
 #### `점수 시스템`: 최고 기록에 도전하여 최고의 김치 러너가 되어보세요! 🏆    
-
+#### `모든 환경 지원`: PC 웹 환경 뿐만아니라 스마트폰, 태블릿 등 다양한 모바일 기기에서도 부드러운 플레이를 지원합니다. 언제 어디서든 김치런의 짜릿한 질주를 경험해보세요!
 
 
 <br>
@@ -55,9 +55,9 @@
 
 
  
-| Engine | IDE |
-|---|---|
-| ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) | ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) |
+| Engine | IDE | Platform |
+|---|---|---|
+| ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) | ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) |  PC 웹, 모바일 웹 (Chrome, Safari, Firefox, Android, iOS) |
 
 
 
