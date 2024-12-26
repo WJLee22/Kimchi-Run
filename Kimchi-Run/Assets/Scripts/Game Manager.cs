@@ -1,3 +1,4 @@
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject FoodSpawner; // 음식 스포너 레퍼런스.
     public GameObject GoldenSpawner; // 금배추 스포너 레퍼런스.
     public Player playerScript; // 플레이어 스크립트 레퍼런스.
+    public TMP_Text scoreText; // 점수를 나타내는 텍스트 레퍼런스.
 
     //Unity에 의해 자동으로 호출되는 함수로, start 함수보다 먼저 호출됨. 
     void Awake()
@@ -57,6 +59,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(state == GameState.Playing) // 게임 상태가 Playing이면
+        {
+            scoreText.text = "Score: " + Mathf.FloorToInt(CalculateScore()); // 점수 텍스트에 경과된 시간을 표시.
+        }
         // 게임 상태가 Intro이고, 스페이스바(모든키로 수정함)를 눌렀다면 (게임 상태: Intro -> Playing)
         if(state == GameState.Intro && Input.anyKeyDown)  
         {
