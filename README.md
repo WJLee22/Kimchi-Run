@@ -16,6 +16,7 @@
 
 ![화면 캡처 2024-12-27 043144](https://github.com/user-attachments/assets/7fe93b55-5a32-44cf-924c-652c8cac2c0a)
 ![Kimchi Run_ by WJ - Chrome 2024-12-27 05-36-41](https://github.com/user-attachments/assets/17bd5865-e589-4781-914b-e15b53621c1f)
+![Kimchi Run_ by WJ - Chrome 2024-12-27 05-36-41 (1)](https://github.com/user-attachments/assets/602a23aa-c43d-4b7a-ba42-44ee29bcaf45)
 ![Kimchi Run_ by WJ - Chrome 2024-12-27 05-36-41 (2)](https://github.com/user-attachments/assets/cbd4aa16-59c3-4231-96ca-92bf17174889)
 
 
