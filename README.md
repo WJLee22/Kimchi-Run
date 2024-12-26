@@ -24,12 +24,20 @@
   
 [![Play Kimchi Run](https://img.shields.io/badge/PLAY%20KIMCHI%20RUN-FF0000?style=for-the-badge&logo=unity&logoColor=white)](https://play.unity.com/en/games/fdc0bfd5-6e15-404e-b3a6-ef55d4d4bb78/kimchi-run-by-wj)
 
-<br><br>
+<br>
 
 ### **👆 위 버튼을 클릭하여 지금 바로 게임을 시작하세요! 👆**
 </div>
 
-<br><hr><br><br>
+
+<br>
+
+
+<br>
+
+> 📢 원활한 플레이를 위해 **`Chrome 브라우저`** 환경을 권장합니다
+
+<hr><br><br>
 
 <div align="center">
 
@@ -43,6 +51,7 @@
 #### `정감가는 캐릭터&디자인`: 한국의 일상적인 풍경과 캐릭터를 배경으로 펼쳐지는 정감가는 분위기의 게임을 즐겨보세요! ✨      
 #### `점수 시스템`: 최고 기록에 도전하여 최고의 김치 러너가 되어보세요! 🏆    
 #### `모든 환경 지원`: PC 웹 환경 뿐만아니라 스마트폰, 태블릿 등 다양한 모바일 기기에서도 부드러운 플레이를 지원합니다. 언제 어디서든 김치런의 짜릿한 질주를 경험해보세요!
+> 원활한 플레이를 위해 **`Chrome 브라우저`** 환경을 권장합니다
 
 
 <br>
@@ -57,7 +66,7 @@
  
 | Engine | IDE | Lang | Platform |
 |---|---|---|---|
-| ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) | ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) | ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) | PC & Mobile WEB (Chrome, Edge, Firefox ...) |
+| ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) | ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) | ![C#](https://img.shields.io/badge/c%23-%23239120.svg?style=for-the-badge&logo=csharp&logoColor=white) | **`PC & Mobile Web`** (Chrome, Edge, Firefox...) |
 
 
 
