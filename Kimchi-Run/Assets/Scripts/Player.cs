@@ -10,7 +10,11 @@ public class Player : MonoBehaviour
     [Header("References")]
     public Rigidbody2D PlayerRigidbody;
     public Animator PlayerAnimator; // 플레이어 애니메이션을 제어하기 위한 레퍼런스.
+    public BoxCollider2D PlayerCollider; // 플레이어의 충돌체를 나타내는 레퍼런스.
     private bool isGrounded = true;// 플레이어가 땅에 닿아있는지 여부를 나타내는 변수.
+
+    public int lives = 3; // 플레이어의 목숨을 나타내는 변수.
+    public bool isInvincible = false; // 플레이어가 무적 상태인지 여부를 나타내는 변수.
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +35,40 @@ public class Player : MonoBehaviour
         }   
     }
 
+    void KillPlayer()
+    {
+        //플레이어가 죽었을떄의 처리.
+        PlayerCollider.enabled = false; // 플레이어의 충돌체를 비활성화.
+        PlayerAnimator.enabled = false; // 플레이어의 애니메이션을 비활성화.
+        //플레이어 사망시, 마리오 죽을때처럼 한번 튀어오르도록.
+        PlayerRigidbody.AddForceY(jumpForce, ForceMode2D.Impulse);
+    }
+
+    void Hit(){
+        // 목숨이 0이 아니면 목숨을 하나 줄이고, 목숨이 0이면 게임오버.
+            lives -= 1;
+            if(lives == 0)
+            {
+                KillPlayer();
+            }
+    }
+
+    void Heal(){
+        // 목숨을 하나 늘림. 단, 목숨이 3보다 커지지 않도록 함.
+            lives = Mathf.Min(3, lives + 1); 
+    }
+
+    void StartInvincible(){
+        // 무적 상태로 변경.
+        isInvincible = true;
+        Invoke("StopInvincible", 5f); // 5초 후 무적 상태 해제.
+    }
+
+    void StopInvincible(){
+        // 무적 상태 해제.
+        isInvincible = false;
+    }
+
     // OnCollisionEnter2D: Collider간에 충돌이 발생했을 때 호출되는 함수.(ex.플레이어 Collider와 Platform Collider 충돌시)
     void OnCollisionEnter2D(Collision2D collision){
         // 땅에 닿았을 때, isGrounded를 true로 변경.
@@ -49,15 +87,27 @@ public class Player : MonoBehaviour
         // 장애물들과 충돌했을 때의 처리.
         if (collider.gameObject.tag == "enemy")
         {
-         
+            //플레이어가 적과 닿았으면 해당 오브젝트 제거. 단, 무적 상태일 때는 제거하지 않음.
+            if(!isInvincible)
+            {
+                Destroy(collider.gameObject);
+                Hit();
+            }
+
         } 
         // 음식들과 충돌했을 때의 처리.
-        else if(collider.gameObject.tag == "food"){
-
+        else if(collider.gameObject.tag == "food")
+        {
+            //닿았으면 해당 오브젝트 제거
+            Destroy(collider.gameObject);
+            Heal();
         }
         // 금배추와 충돌했을 때의 처리.
-        else if(collider.gameObject.tag == "golden"){
-            
+        else if(collider.gameObject.tag == "golden")
+        {
+            //닿았으면 해당 오브젝트 제거
+            Destroy(collider.gameObject);
+            StartInvincible();
         }
     }
 
