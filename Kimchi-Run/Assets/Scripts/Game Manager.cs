@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance; //GameManager의 인스턴스를 저장할 변수.(싱글톤)
     public GameState state = GameState.Intro; 
+    public float PlayStartTime; // 게임 시작 시간을 나타내는 변수.
     public int lives = 3; // 플레이어의 목숨을 나타내는 변수.
 
     [Header("References")]
@@ -36,6 +37,23 @@ public class GameManager : MonoBehaviour
         IntroUI.SetActive(true); // 프레임 시작시 -> 게임 시작 화면 UI 활성화.
     }
 
+    float CalculateScore() // 게임 시작 후 경과된 시간(RunningTime)을 반환하는 함수.
+    {
+        return Time.time - PlayStartTime; 
+    }
+
+    void SaveHighScore() // 현재까지의 최고 점수를 저장하는 함수.
+    {
+        int score = Mathf.FloorToInt(CalculateScore()); // 경과된 시간을 정수로 변환.
+        //PlayerPrefs: 유니티에서 제공하는 데이터 저장소. (사용자의 컴퓨터 디스크에 데이터를 저장해주는 역할을 하는 클래스)
+        int currentHighScore = PlayerPrefs.GetInt("highScore"); // 현재까지의 최고 점수를 디스크에서 가져옴.
+        if(score > currentHighScore) // 현재 점수가 현재까지의 최고 점수보다 높으면
+        {
+            PlayerPrefs.SetInt("highScore", score); // 최고 점수를 현재까지의 점수로 변경.
+            PlayerPrefs.Save(); // 변경된 최고 점수를 디스크에 저장.
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -47,6 +65,7 @@ public class GameManager : MonoBehaviour
             EnemySpawner.SetActive(true); // 적 스포너 활성화.
             FoodSpawner.SetActive(true); // 음식 스포너 활성화.
             GoldenSpawner.SetActive(true); // 금배추 스포너 활성화.
+            PlayStartTime = Time.time; // 게임 시작 시간을 저장.
         }
         if(state == GameState.Playing && lives == 0) // 게임 상태가 Playing이고, 목숨이 0이면 (게임 상태: Playing -> Dead)
         {
