@@ -19,7 +19,7 @@
 ### **👆 위 버튼을 클릭하여 지금 바로 게임을 시작하세요! 👆**
 </div>
 
-<br><hr><br><br>
+<br><hr><br>
 
 <div align="center">
  
@@ -36,6 +36,8 @@
 <br>
 
 <div align="center">
+
+<br>
  
 ## 💻 프로젝트 정보 💻
 
