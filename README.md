@@ -1,8 +1,10 @@
+<div align="center">
+ 
 # 🎮 김치런: Unity6 Engine으로 제작한 중독성 강한 러닝 게임! 🔥
 
 <br>
 
-<div align="center">
+
  
 ### 🇰🇷 한국의 맛을 담은 짜릿한 질주! 김치 Run! 🇰🇷
 
