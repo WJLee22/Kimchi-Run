@@ -21,19 +21,32 @@
 
 <br><hr><br><br>
 
+<div align="center">
+ 
 ## 🎯 게임 특징 🎯
+
+</div>
 
 #### `중독성 강한 게임 플레이`: 간단한 조작법과 빠른 속도감으로 쉴 새 없이 몰입하게 됩니다! ✨  
 #### `정감가는 캐릭터&디자인`: 한국의 일상적인 풍경과 캐릭터를 배경으로 펼쳐지는 정감가는 분위기의 게임을 즐겨보세요! ✨      
 #### `점수 시스템`: 최고 기록에 도전하여 최고의 김치 러너가 되어보세요! 🏆    
 
+
+
 <br>
 
+<div align="center">
+ 
 ## 💻 프로젝트 정보 💻
 
+
+ 
 | Engine | IDE |
 |---|---|
 | ![Unity](https://img.shields.io/badge/unity-%23000000.svg?style=for-the-badge&logo=unity&logoColor=white) | ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) |
 
 
+
 #### 주요 기능: 러닝 게임, 장애물 회피, 점수 시스템  
+
+</div>
