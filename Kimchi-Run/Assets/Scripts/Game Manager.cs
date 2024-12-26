@@ -67,11 +67,12 @@ public class GameManager : MonoBehaviour
         if(state == GameState.Playing) // 게임 상태가 Playing이면
         {
             scoreText.text = "Score: " + Mathf.FloorToInt(CalculateScore()); // 점수 텍스트에 경과된 시간을 표시.
-        } 
-        else if(state == GameState.Dead) // 게임 상태가 Dead이면
-        {
+        }  else if(state == GameState.Dead)   {
             scoreText.text = "High Score: " + getHighScore(); // 점수 텍스트에 최고 점수를 표시.
-            SaveHighScore(); // 최고 점수를 저장.
+            //SaveHighScore(); // 최고 점수를 저장. 이곳에서 호출시, 게임오버되어도 스코어가 계속 증가되는 문제발생. 
+            // Dead 상태에서도 CalculateScore()는 계속 Time.time - PlayStartTime을 계산함.
+            // 따라서 게임오버 상태에서도 Time.time이 계속 증가하므로 CalculateScore()의 결과값도 계속 커지게 됨.
+            // + Update() 함수에서 매 프레임마다 이 로직이 실행되기 때문에 Dead 상태에서도 계속 점수가 증가하는 문제가 발생하는 것임.
         }
         // 게임 상태가 Intro이고, 스페이스바(모든키로 수정함)를 눌렀다면 (게임 상태: Intro -> Playing)
         if(state == GameState.Intro && Input.anyKeyDown)  
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
             GoldenSpawner.SetActive(false); // 금배추 스포너 비활성화.
             
             DeadUI.SetActive(true); // 플레이어 사망시 화면 UI 활성화.
+            SaveHighScore(); // 최고 점수 저장.
             state = GameState.Dead; // 게임 상태를 Dead로 변경.
         }
         if(state == GameState.Dead && Input.anyKeyDown)
