@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     [Header("References")]
 
     public GameObject IntroUI; // 게임 시작 화면 UI 레퍼런스.
+    public GameObject DeadUI; // 플레이어 사망시 화면 UI 레퍼런스.
     public GameObject EnemySpawner; // 적 스포너 레퍼런스.
     public GameObject FoodSpawner; // 음식 스포너 레퍼런스.
     public GameObject GoldenSpawner; // 금배추 스포너 레퍼런스.
@@ -53,13 +54,13 @@ public class GameManager : MonoBehaviour
             EnemySpawner.SetActive(false); // 적 스포너 비활성화.
             FoodSpawner.SetActive(false); // 음식 스포너 비활성화.
             GoldenSpawner.SetActive(false); // 금배추 스포너 비활성화.
-
+            
+            DeadUI.SetActive(true); // 플레이어 사망시 화면 UI 활성화.
             state = GameState.Dead; // 게임 상태를 Dead로 변경.
         }
         if(state == GameState.Dead && Input.anyKeyDown)
         {
             SceneManager.LoadScene("main"); // 죽고나서 키 입력시 main 씬 다시 로드.(즉, 게임 재시작)
-            
         }
     }
 }
