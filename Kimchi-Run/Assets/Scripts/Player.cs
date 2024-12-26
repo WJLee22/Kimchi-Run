@@ -45,10 +45,10 @@ public class Player : MonoBehaviour
     void Hit(){
         // 목숨이 0이 아니면 목숨을 하나 줄이고, 목숨이 0이면 게임오버.
             GameManager.instance.lives -= 1;
-            if(GameManager.instance.lives == 0)
-            {
-                KillPlayer();
-            }
+            // if(GameManager.instance.lives == 0)
+            // {
+            //     KillPlayer();
+            // }
     }
 
     void Heal(){

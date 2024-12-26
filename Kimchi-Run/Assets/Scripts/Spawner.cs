@@ -15,6 +15,11 @@ public class Spawner : MonoBehaviour
         Invoke("Spawn", Random.Range(minSpawnDelay, maxSpawnDelay)); // 프레임 시작 시, Spawn 함수를 랜덤초 뒤에 실행.
     }
 
+    void OnDisable() //플레이어 사망시 스케줄된 Invoke 함수를 취소하기 위해.
+    {
+        CancelInvoke(); // Spawn 함수를 취소.
+    }
+
     void Spawn(){
         GameObject randomObject = gameObjects[Random.Range(0,gameObjects.Length)]; // 빌딩 오브젝트 배열에서 랜덤으로 오브젝트 엘리먼트를 선택.
         Instantiate(randomObject, transform.position, Quaternion.identity); // 선택된 오브젝트 엘리먼트를 인스턴스화 -> main scene에 생성.
