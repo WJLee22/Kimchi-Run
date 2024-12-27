@@ -19,7 +19,8 @@ public class Player : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        // Rigidbody2D의 회전을 고정하여 플레이어가 회전하지 않도록 설정.
+        PlayerRigidbody.freezeRotation = true;
     }
 
     // Update is called once per frame

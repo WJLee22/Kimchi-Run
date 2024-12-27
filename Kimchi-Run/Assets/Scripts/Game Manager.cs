@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour
         }
         float speed = 8f + (1f * Mathf.Floor(CalculateScore() / 10f)); // 초기 게임 속도를 8 + (경과된 시간 / 10)으로 계산. => 10초마다 속도 0.5씩 증가. 즉, 시간이 흘러감에따라 자연스럽게 난이도 증가!!
 
-        return Mathf.Min(speed, 50f); // 게임의 최대 속도가 30을 넘지 않도록 함.
+        return Mathf.Min(speed, 70f); // 게임의 최대 속도가 30을 넘지 않도록 함.
         
     }
 
