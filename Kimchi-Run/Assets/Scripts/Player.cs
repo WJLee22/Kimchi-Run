@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     public BoxCollider2D PlayerCollider; // 플레이어의 충돌체를 나타내는 레퍼런스.
     private bool isGrounded = true;// 플레이어가 땅에 닿아있는지 여부를 나타내는 변수.
     public bool isInvincible = false; // 플레이어가 무적 상태인지 여부를 나타내는 변수.
+    private int jumpCount = 0; // 현재 점프 횟수를 나타내는 변수.
+    public int maxJumpCount = 2; // 최대 점프 횟수 (더블 점프를 위해 2로 설정).
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,10 +26,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         // 스페이스바 입력을 받아 점프를 처리하는 로직. 땅에 닿아있을 때만 점프 가능하도록 함.
-        if (Input.anyKeyDown && isGrounded){
+        // -> 더블점프를 위해, 플레이어가 최대 점프 횟수에 도달하지 않았을 때만 점프할 수 있도록 변경.
+        if (Input.anyKeyDown && jumpCount < maxJumpCount)
+        {
+            // 수직 속도를 초기화하여 점프 높이가 일정하도록 함.
+            PlayerRigidbody.linearVelocity = new Vector2(PlayerRigidbody.linearVelocity.x, 0);
             // AddForceY: Rigidbody2D에 수직 방향으로 힘을 가함.
             // force 타입 = ForceMode2D.Impulse: 순간적인 힘. -> 플레이어에게 즉시 force 부여. 
             PlayerRigidbody.AddForceY(jumpForce, ForceMode2D.Impulse);
+            jumpCount++; // 점프 횟수 증가.
             isGrounded = false; // 점프 후 땅에 닿지 않은 상태로 변경.
             PlayerAnimator.SetInteger("state", 1); // 점프 애니메이션 실행.
         }   
@@ -79,6 +86,7 @@ public class Player : MonoBehaviour
                 PlayerAnimator.SetInteger("state", 2); // 착지 애니메이션 실행. 
             }
             isGrounded = true;
+            jumpCount = 0; // 점프 횟수 초기화.
         }
     }
 
